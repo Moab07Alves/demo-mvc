@@ -2,6 +2,7 @@ package com.mballem.curso.boot.domain;
 
 import jakarta.persistence.*;
 
+@SuppressWarnings("serial")
 @Entity
 @Table(name = "CARGOS")
 public class Cargo extends AbstractEntity<Long>{
