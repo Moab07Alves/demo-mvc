@@ -1,5 +1,7 @@
 package com.mballem.curso.boot.domain;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @SuppressWarnings("serial")
@@ -9,6 +11,9 @@ public class Cargo extends AbstractEntity<Long>{
 
 	@Column(name = "nome", nullable = false, unique = true, length = 60)
 	private String nome;
+	
+	@OneToMany(mappedBy = "cargo")
+	private List<Funcionario> funcionarios;
 	
 	@ManyToOne
 	@JoinColumn(name = "id_departamento_fk")
